@@ -70,7 +70,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
             }
         });
-        holder.UrlToImage.setText(newsArrayList.get(position).getUrlToImage());
         holder.imageView.setImageBitmap(newsArrayList.get(position).getBitmap());
         holder.publishedAt.setText(newsArrayList.get(position).getPublishedAt());
     }
