@@ -63,6 +63,7 @@ public class DownloadTask extends AsyncTask<String,Void,ArrayList<News>> {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject NewsJsonArrJSONObject = jsonArray.getJSONObject(i);
                 try {
+                    
 
                     bitmap = BitmapFactory.decodeStream((InputStream)new URL(
                             NewsJsonArrJSONObject.getString("urlToImage")).getContent());
