@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "503792725295",
+    "firebase_url": "https://madfirebase1.firebaseio.com",
+    "project_id": "madfirebase1",
+    "storage_bucket": "madfirebase1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503792725295:android:9bda722dbdf5d8f6",
+        "android_client_info": {
+          "package_name": "com.example.android.booksapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503792725295-78lpjra0nn1nhjf5s550t4e1m7red4q7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHDWhr_CneDBRiVS5HrvymvA2S040NVQs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

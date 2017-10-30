@@ -1,9 +1,11 @@
 package com.example.android.booksapi;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 public class DownloadTask extends AsyncTask<String,Void,ArrayList<News>> {
 
     Bitmap bitmap;
+
     interface OnDownloadListener{
         void OnDownloaded(ArrayList<News>news);
     }
@@ -34,9 +37,6 @@ public class DownloadTask extends AsyncTask<String,Void,ArrayList<News>> {
     public DownloadTask(OnDownloadListener odl) {
         this.odl = odl;
     }
-
-
-
     @Override
 
     protected ArrayList<News> doInBackground(String... params) {
@@ -54,7 +54,7 @@ public class DownloadTask extends AsyncTask<String,Void,ArrayList<News>> {
                 Buffer=bufferedReader.readLine();
             }
 
-           // JSONArray NewsJsonArr = new JSONArray(sb.toString());
+           // JSONArray NewsJsonArr = news JSONArray(sb.toString());
 
             JSONObject jsonObject=new JSONObject(sb.toString());
             JSONArray jsonArray=jsonObject.getJSONArray("articles");
@@ -92,7 +92,9 @@ public class DownloadTask extends AsyncTask<String,Void,ArrayList<News>> {
 
     @Override
     protected void onPostExecute(ArrayList<News> newses) {
-
+        if(newses.size()==0){
+            return;
+        }
         super.onPostExecute(newses);
         odl.OnDownloaded(newses);
     }

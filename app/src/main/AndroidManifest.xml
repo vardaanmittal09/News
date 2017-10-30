@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.booksapi">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +19,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Profile"/>
+        <activity android:name=".register"/>
+        <activity android:name=".FirstPage" />
+        <activity android:name=".bbc_page" />
+        <activity android:name=".cnn_news" />
+        <activity android:name=".Football_Page" />
+        <activity android:name=".Buzzfeed" />
+        <activity android:name=".TOI" />
+        <activity android:name=".TAbbed" />
+        <activity android:name=".Usa_Today" />
+        <activity android:name=".espn" />
+        <activity android:name=".bloomberg" />
+        <activity android:name=".cnbc" />
+        <activity android:name=".ft" />
+        <activity android:name=".Setting_Ads" />
+        <activity android:name=".Setting_Language" />
+        <activity android:name=".Setting_Policy" />
+        <activity android:name=".Setting_Rate" />
+        <activity android:name=".Setting_Reminder" />
+        <activity android:name=".Setting_Term_of_use" />
+        <activity android:name=".Settings_Faq" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".bible"/>
+        <activity android:name=".weekly"/>
+        <activity android:name=".science"/>
+        <activity android:name=".national"/>
+        <activity android:name=".polyon"/>
+        <activity android:name=".mtv"/>
+        <activity android:name=".mtvuk"/>
+        <activity android:name=".ars"/>
+        <activity android:name=".hacker"/>
+        <activity android:name=".engadget"/>
+        <activity android:name=".web"></activity>
     </application>
 
 </manifest>

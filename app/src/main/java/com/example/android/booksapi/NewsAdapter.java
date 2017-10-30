@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -64,14 +66,24 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             @Override
             public void onClick(View v) {
                 Uri uri=Uri.parse(newsArrayList.get(position).getUrl());
-                Intent i=new Intent(Intent.ACTION_VIEW,uri);
-
+                Intent i=new Intent(context,web.class);
+                i.putExtra("Web",uri.toString());
                 context.startActivity(i);
 
             }
         });
         holder.imageView.setImageBitmap(newsArrayList.get(position).getBitmap());
         holder.publishedAt.setText(newsArrayList.get(position).getPublishedAt());
+        holder.share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri=Uri.parse(newsArrayList.get(position).getUrl());
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT,uri.toString());
+                context.startActivity(Intent.createChooser(sharingIntent, "Share using"));
+            }
+        });
     }
 
     @Override
@@ -83,6 +95,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
         TextView title,author,description,url,UrlToImage,publishedAt;
         ImageView imageView;
+        ImageView share;
 
         public NewsViewHolder(View itemView) {
             super(itemView);
@@ -93,7 +106,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             url=(TextView)itemView.findViewById(R.id.url);
             UrlToImage=(TextView)itemView.findViewById(R.id.urlToImage);
             publishedAt=(TextView)itemView.findViewById(R.id.publishedAt);
-
+            share=(ImageView) itemView.findViewById(R.id.share);
         }
     }
 }
